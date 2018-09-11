@@ -33,7 +33,7 @@ pageEncoding="UTF-8"%>
 						</blockquote>
 						<form action="criptografar" method="post">
 							<div class="form-group">
-								<select class="form-control">
+								<select class="form-control" name="select1">
 									<option>Cifra de Cesar</option>
 									<option>Cifra de Tranposição</option>
 									<option>Cifra Playfair</option>
@@ -55,7 +55,7 @@ pageEncoding="UTF-8"%>
 						</blockquote>
 						<form action="descriptografar" method="post">
 							<div class="form-group">
-								<select class="form-control">
+								<select class="form-control" name="select2">
 									<option>Cifra de Cesar</option>
 									<option>Cifra de Tranposição</option>
 									<option>Cifra Playfair</option>
