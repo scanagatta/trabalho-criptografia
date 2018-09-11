@@ -37,6 +37,7 @@
 			</blockquote>
 			<form action="criptografar" method="post">
 				<div class="form-group">
+				<label>Algoritimo</label>
 					<select class="form-control" name="criptografia.tipo">
 						<option value="1">Cifra de Cesar</option>
 						<option value="2">Cifra de Tranposição</option>
@@ -45,10 +46,12 @@
 					</select>
 				</div>
 				<div class="form-group">
+				<label>Chave</label>
 					<input class="form-control" name="criptografia.chave"
 						value="${chave}">
 				</div>
 				<div class="form-group">
+				<label>Texto</label>
 					<input name="criptografia.texto1" class="form-control"
 						value="${texto1}">
 				</div>
@@ -56,15 +59,18 @@
 					<button class="btn" type="submit" value="criptografar">Criptografar</button>
 				</div>
 				<div class="form-group">
+				<label>Texto Criptografado</label>
 					<input class="form-control" name="textoCriptografado"
 						value="${textoCriptografado}" disabled="disabled">
 				</div>
 			</form>
+			<hr>
 			<blockquote>
 				<h2>Descriptografar</h2>
 			</blockquote>
 			<form action="descriptografar" method="post">
 				<div class="form-group">
+				<label>Algoritimo</label>
 					<select class="form-control" name="criptografia.tipo">
 						<option value="1">Cifra de Cesar</option>
 						<option value="2">Cifra de Tranposição</option>
@@ -73,18 +79,23 @@
 					</select>
 				</div>
 				<div class="form-group">
+				<label>Chave</label>
 					<input class="form-control" name="criptografia.chave"
 						value="${chave}">
 				</div>
 				<div class="form-group">
+				<label>Texto</label>
 					<input name="criptografia.texto2" class="form-control"
 						value="${texto2}">
 				</div>
 				<div class="form-group">
 					<button class="btn" type="submit" value="descriptografar">Descriptografar</button>
 				</div>
-				<input class="form-control" name="textoDescriptografado"
+				<div class="form-group">
+					<label>Texto Descriptografado</label>
+					<input class="form-control" name="textoDescriptografado"
 					value="${textoDescriptografado}" disabled="disabled">
+				</div>
 			</form>
 		</div>
 	</div>
