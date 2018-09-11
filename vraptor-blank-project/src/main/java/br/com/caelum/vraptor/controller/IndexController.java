@@ -1,29 +1,70 @@
 package br.com.caelum.vraptor.controller;
 
+import javax.inject.Inject;
+
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
+import br.com.caelum.vraptor.Result;
 import model.CifraCesar;
+import model.Criptografia;
 
 @Controller
 @Path("/index")
 public class IndexController {
 
 	CifraCesar cifraCesar = new CifraCesar();
-	
+
+	@Inject
+	private Result result;
+
 	@Get("/index")
 	public void index() {
 
 	}
 
 	@Post("/criptografar")
-	public void criptografar(String texto1) {
-		
+	public void criptografar(Criptografia criptografia) {
+		switch (criptografia.getTipo()) {
+		case 1:
+			result.include("textoCriptografado",cifraCesar.cifrarCesar(criptografia.getTexto1()));
+			result.include("texto1", criptografia.getTexto1());
+			result.redirectTo(this).index();
+			break;
+		case 2:
+
+			break;
+		case 3:
+
+			break;
+		case 4:
+
+			break;
+		default:
+			break;
+		}
 	}
 
 	@Post("/descriptografar")
-	public void descriptografar(String texto2) {
+	public void descriptografar(Criptografia criptografia) {
+		switch (criptografia.getTipo()) {
+		case 1:
+			result.include("textoDescriptografado",cifraCesar.descifrarCesar(criptografia.getTexto2()));
+			result.include("texto2", criptografia.getTexto2());
+			result.redirectTo(this).index();
+			break;
+		case 2:
 
+			break;
+		case 3:
+
+			break;
+		case 4:
+
+			break;
+		default:
+			break;
+		}
 	}
 }
