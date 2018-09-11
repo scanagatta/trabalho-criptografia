@@ -38,11 +38,34 @@
 			<form action="criptografar" method="post">
 				<div class="form-group">
 				<label>Algoritimo</label>
-					<select class="form-control" name="criptografia.tipo">
+						<select class="form-control" name="criptografia.tipo">
+						<c:if test="${'1' == criptografia.tipo}">
+						<option value="1" selected="selected">Cifra de Cesar</option>
+						</c:if>
+						<c:if test="${!('1' == criptografia.tipo)}">
 						<option value="1">Cifra de Cesar</option>
+						</c:if>
+						
+						<c:if test="${'2' == criptografia.tipo}">
+						<option value="2" selected="selected">Cifra de Tranposição</option>
+						</c:if>
+						<c:if test="${!('2' == criptografia.tipo)}">
 						<option value="2">Cifra de Tranposição</option>
+						</c:if>
+						
+						<c:if test="${'3' == criptografia.tipo}">
+						<option value="3" selected="selected">Cifra Playfair</option>
+						</c:if>
+						<c:if test="${!('3' == criptografia.tipo)}">
 						<option value="3">Cifra Playfair</option>
+						</c:if>
+						
+						<c:if test="${'4' == criptografia.tipo}">
+						<option value="4" selected="selected">Cifra de Vigenère</option>
+						</c:if>
+						<c:if test="${!('4' == criptografia.tipo)}">
 						<option value="4">Cifra de Vigenère</option>
+						</c:if>
 					</select>
 				</div>
 				<div class="form-group">
@@ -61,7 +84,7 @@
 				<div class="form-group">
 				<label>Texto Criptografado</label>
 					<input class="form-control" name="textoCriptografado"
-						value="${textoCriptografado}" disabled="disabled">
+						value="${textoCriptografado}">
 				</div>
 			</form>
 			<hr>
@@ -72,10 +95,33 @@
 				<div class="form-group">
 				<label>Algoritimo</label>
 					<select class="form-control" name="criptografia.tipo">
+						<c:if test="${'1' == criptografia.tipo}">
+						<option value="1" selected="selected">Cifra de Cesar</option>
+						</c:if>
+						<c:if test="${!('1' == criptografia.tipo)}">
 						<option value="1">Cifra de Cesar</option>
+						</c:if>
+						
+						<c:if test="${'2' == criptografia.tipo}">
+						<option value="2" selected="selected">Cifra de Tranposição</option>
+						</c:if>
+						<c:if test="${!('2' == criptografia.tipo)}">
 						<option value="2">Cifra de Tranposição</option>
+						</c:if>
+						
+						<c:if test="${'3' == criptografia.tipo}">
+						<option value="3" selected="selected">Cifra Playfair</option>
+						</c:if>
+						<c:if test="${!('3' == criptografia.tipo)}">
 						<option value="3">Cifra Playfair</option>
+						</c:if>
+						
+						<c:if test="${'4' == criptografia.tipo}">
+						<option value="4" selected="selected">Cifra de Vigenère</option>
+						</c:if>
+						<c:if test="${!('4' == criptografia.tipo)}">
 						<option value="4">Cifra de Vigenère</option>
+						</c:if>
 					</select>
 				</div>
 				<div class="form-group">
@@ -92,9 +138,9 @@
 					<button class="btn" type="submit" value="descriptografar">Descriptografar</button>
 				</div>
 				<div class="form-group">
-					<label>Texto Descriptografado</label>
+				<label>Texto Descriptografado</label>
 					<input class="form-control" name="textoDescriptografado"
-					value="${textoDescriptografado}" disabled="disabled">
+						value="${textoDescriptografado}">
 				</div>
 			</form>
 		</div>

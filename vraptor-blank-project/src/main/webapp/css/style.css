@@ -11,7 +11,11 @@ body{
 }
 
 h2 {
-    color: #f1bf98;
+    color: #8c1c13;
+}
+
+hr {
+	border-top-color: #8c1c13 !important;
 }
 
 .navbar-default .navbar-brand{
