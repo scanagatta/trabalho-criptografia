@@ -29,7 +29,7 @@ public class IndexController {
 	public void criptografar(Criptografia criptografia) {
 		switch (criptografia.getTipo()) {
 		case 1:
-			result.include("textoCriptografado", cifraCesar.cifrarCesar(criptografia.getTexto1()));
+			result.include("textoCriptografado", cifraCesar.cifrarCesar(criptografia));
 			result.include("texto1", criptografia.getTexto1());
 			result.redirectTo(this).index();
 			break;
@@ -56,7 +56,7 @@ public class IndexController {
 	public void descriptografar(Criptografia criptografia) {
 		switch (criptografia.getTipo()) {
 		case 1:
-			result.include("textoDescriptografado", cifraCesar.descifrarCesar(criptografia.getTexto2()));
+			result.include("textoDescriptografado", cifraCesar.descifrarCesar(criptografia));
 			result.include("texto2", criptografia.getTexto2());
 			result.redirectTo(this).index();
 			break;
