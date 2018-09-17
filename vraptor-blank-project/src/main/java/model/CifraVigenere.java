@@ -2,10 +2,6 @@ package model;
 
 import java.text.Normalizer;
 
-/**
- *
- * @author Miguel A Barbosa
- */
 public class CifraVigenere {
 
 	char[] mensagem;
