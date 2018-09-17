@@ -8,6 +8,7 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import model.CifraCesar;
+import model.CifraTransposicao;
 import model.CifraVigenere;
 import model.Criptografia;
 
@@ -16,6 +17,7 @@ import model.Criptografia;
 public class IndexController {
 
 	CifraCesar cifraCesar = new CifraCesar();
+	CifraTransposicao cifraTransposicao = new CifraTransposicao();
 
 	@Inject
 	private Result result;
@@ -34,7 +36,8 @@ public class IndexController {
 			result.redirectTo(this).index();
 			break;
 		case 2:
-
+			result.include("textoCriptografado", cifraTransposicao.cifraTransposicao(criptografia.getTexto1(), criptografia.getChave()));
+			result.redirectTo(this).index();
 			break;
 		case 3:
 
@@ -61,7 +64,8 @@ public class IndexController {
 			result.redirectTo(this).index();
 			break;
 		case 2:
-
+			result.include("textoDescriptografado", cifraTransposicao.descifrarTransposicao(criptografia.getTexto2(), criptografia.getChave()));
+			result.redirectTo(this).index();
 			break;
 		case 3:
 
