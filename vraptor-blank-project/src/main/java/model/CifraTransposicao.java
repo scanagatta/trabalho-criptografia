@@ -1,5 +1,8 @@
 package model;
-
+/**
+*
+* @author Iury C Lansarin
+*/
 public class CifraTransposicao {
 	
 	public String cifraTransposicao(String texto1, String chave) {
