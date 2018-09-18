@@ -32,11 +32,17 @@ public class IndexController {
 		switch (criptografia.getTipo()) {
 		case 1:
 			result.include("textoCriptografado", cifraCesar.cifrarCesar(criptografia));
+			result.include("chave", criptografia.getChave());
 			result.include("texto1", criptografia.getTexto1());
+			result.include("criptografia", criptografia);
 			result.redirectTo(this).index();
 			break;
 		case 2:
-			result.include("textoCriptografado", cifraTransposicao.cifraTransposicao(criptografia.getTexto1(), criptografia.getChave()));
+			result.include("textoCriptografado",
+					cifraTransposicao.cifraTransposicao(criptografia.getTexto1(), criptografia.getChave()));
+			result.include("chave", criptografia.getChave());
+			result.include("texto1", criptografia.getTexto1());
+			result.include("criptografia", criptografia);
 			result.redirectTo(this).index();
 			break;
 		case 3:
@@ -60,11 +66,17 @@ public class IndexController {
 		switch (criptografia.getTipo()) {
 		case 1:
 			result.include("textoDescriptografado", cifraCesar.descifrarCesar(criptografia));
+			result.include("chave", criptografia.getChave());
 			result.include("texto2", criptografia.getTexto2());
+			result.include("criptografia", criptografia);
 			result.redirectTo(this).index();
 			break;
 		case 2:
-			result.include("textoDescriptografado", cifraTransposicao.descifrarTransposicao(criptografia.getTexto2(), criptografia.getChave()));
+			result.include("textoDescriptografado",
+					cifraTransposicao.descifrarTransposicao(criptografia.getTexto2(), criptografia.getChave()));
+			result.include("chave", criptografia.getChave());
+			result.include("texto2", criptografia.getTexto2());
+			result.include("criptografia", criptografia);
 			result.redirectTo(this).index();
 			break;
 		case 3:

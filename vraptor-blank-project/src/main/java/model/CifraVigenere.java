@@ -11,7 +11,7 @@ public class CifraVigenere {
 	char[] texto;
 
 	public CifraVigenere(String msg, String chave) {
-		msg = RetiraAcento(msg);
+		msg = retiraAcento(msg);
 		this.mensagem = msg.toCharArray();
 		char[] chaveTemp = chave.toCharArray();
 		this.chave = new char[msg.length()];
@@ -30,7 +30,7 @@ public class CifraVigenere {
 		// cifrar();
 	}
 
-	public static String RetiraAcento(String str) {
+	public static String retiraAcento(String str) {
 		str = Normalizer.normalize(str, Normalizer.Form.NFD);
 		str = str.replaceAll("[^\\p{ASCII}]", "");
 		return str;
